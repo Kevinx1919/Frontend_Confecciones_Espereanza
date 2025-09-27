@@ -7,6 +7,7 @@ const Listarcliente = () => {
   const [filteredClientes, setFilteredClientes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [clientesDePagina, setClientesDePagina] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  
@@ -68,6 +69,7 @@ const Listarcliente = () => {
   const indexOfFirstCliente = indexOfLastCliente - clientesPorPagina;
   const clientesActuales = filteredClientes.slice(indexOfFirstCliente, indexOfLastCliente);
   const totalPaginas = Math.ceil(filteredClientes.length / clientesPorPagina);
+  
 
   // Funciones de navegación de páginas
   const goToPage = (pageNumber) => {
@@ -79,6 +81,7 @@ const Listarcliente = () => {
   };
 
   const goToNextPage = () => {
+    console.log('Intento ir a la siguiente página');
     setCurrentPage(prev => Math.min(prev + 1, totalPaginas));
   };
 
@@ -135,6 +138,7 @@ const Listarcliente = () => {
                 <th>Dirección</th>
                 <th>Código Postal</th>
                 <th>Total Pedidos</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -148,6 +152,10 @@ const Listarcliente = () => {
                   <td>{cliente.direccionCliente}</td>
                   <td>{cliente.codigoPostalCliente}</td>
                   <td>{cliente.totalPedidos}</td>
+                  <td>
+                    <button onClick={() => navigate(`/clientes/editar/${cliente.idCliente}`)}>✏️</button>
+                    <button onClick={() => navigate(`/clientes/eliminar/${cliente.idCliente}`)}>🗑️ </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -186,6 +194,7 @@ const Listarcliente = () => {
               
               <button
                 onClick={goToNextPage}
+                
                 disabled={currentPage === totalPaginas}
                 style={{
                   backgroundColor: '#7c3aed',

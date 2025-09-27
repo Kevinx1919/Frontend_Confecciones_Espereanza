@@ -14,6 +14,8 @@ import MenuEmpleado from "./compomentes/Empleados/MenuEmpleado";
 import MenuCliente from "./compomentes/Clientes/MenuCliente";
 import Listarcliente from "./compomentes/Clientes/Listarcliente";
 import RegistrarCliente from "./compomentes/Clientes/RegistrarCliente";
+import EditarCliente from "./compomentes/Clientes/EditarCliente";
+import EliminarCliente from "./compomentes/Clientes/EliminarCliente";
 //importaciones para stock
 import MenuStock from "./compomentes/Stock/MenuStock";
 //importaciones para pedidps
@@ -65,7 +67,9 @@ const MainApp = () => {
         <Route path="/clientes" element={<MenuCliente />} />
         <Route path="/listarcliente" element={<Listarcliente />} />
         <Route path="/registrarcliente" element={<RegistrarCliente />} />
-        
+        <Route path="/clientes/editar/:id" element={<EditarCliente />} />
+        <Route path="/clientes/eliminar/:id" element={<EliminarCliente />} />
+       
         {/* Rutas para Stock */}
         <Route path="/stock" element={<MenuStock />} />
         
