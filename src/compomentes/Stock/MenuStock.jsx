@@ -6,14 +6,14 @@ const MenuStock = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="menu-stok-wrapper">
-      <h2>Stok</h2>
-      <div className="menu-stok-grid">
-        <button className="btn blue">
+    <div className="menu-stock-wrapper">
+      <h2>Stock</h2>
+      <div className="menu-stock-grid">
+        <button className="btn blue" onClick={() => navigate('/registrar-material')}>
           <span className="icon">+</span> Registrar material
         </button>
-        <button className="btn orange">
-          <span className="icon">✔</span> Consultar matrial
+        <button className="btn orange" onClick={() => navigate('/listar-material')}>
+          <span className="icon">✔</span> Consultar material
         </button>
         <button className="btn green">
           <span className="icon">📋</span> Generar reporte general

@@ -18,6 +18,10 @@ import EditarCliente from "./compomentes/Clientes/EditarCliente";
 import EliminarCliente from "./compomentes/Clientes/EliminarCliente";
 //importaciones para stock
 import MenuStock from "./compomentes/Stock/MenuStock";
+import ListarMaterial from "./compomentes/Stock/ListarMaterial";
+import RegistrarMaterial from "./compomentes/Stock/RegistrarMaterial";
+import EditarMaterial from "./compomentes/Stock/EditarMaterial";
+import EliminarMaterial from "./compomentes/Stock/EliminarMaterial";
 //importaciones para pedidps
 import MenuPedido from "./compomentes/Pedidos/MenuPedido";
 //importaciones para tareas
@@ -72,6 +76,10 @@ const MainApp = () => {
        
         {/* Rutas para Stock */}
         <Route path="/stock" element={<MenuStock />} />
+        <Route path="/listar-material" element={<ListarMaterial />} />
+        <Route path="/registrar-material" element={<RegistrarMaterial />} />
+        <Route path="/editar-material/:id" element={<EditarMaterial />} />
+        <Route path="/eliminar-material/:id" element={<EliminarMaterial />} />
         
         {/* Rutas para pedidos */}
         <Route path="/pedidos" element={<MenuPedido />} />
@@ -81,12 +89,14 @@ const MainApp = () => {
         
         {/* Rutas para reportes */}
         <Route path="/reportes" element={<MenuReporte />} />
+        
         {/* Rutas para usuarios */}
         <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </div>
   );
 };
+
 // Componente que decide qué mostrar basado en la autenticación
 const AppContent = () => {
   const { isAuthenticated, loading } = useAuth();
