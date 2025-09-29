@@ -1,3 +1,6 @@
+/* ========================================= */
+/* BASE STYLES & COLORS (Mantienen nombres genéricos) */
+/* ========================================= */
 /* Colores de botones */
 .blue {
   background-color: #007bff !important;
@@ -15,8 +18,11 @@
   background-color: #7c3aed !important;
 }
 
+/* ========================================= */
+/* ESTRUCTURA Y MENÚ DE PEDIDOS */
+/* ========================================= */
 /* Diseño base para pantallas extra grandes (más de 1300px) */
-.menu-pedido-wrapper {
+.menu-pedido-wrapper { /* RENOMBRADO: menu-cliente-wrapper -> menu-pedido-wrapper */
   margin: 40px auto;
   width: 1730px;
   height: 700px;
@@ -36,7 +42,7 @@
 }
 
 /* Estilo para la grid */
-.menu-pedido-grid {
+.menu-pedido-grid { /* RENOMBRADO: menu-cliente-grid -> menu-pedido-grid */
   display: grid;
   grid-template-columns: repeat(2, 580px);
   gap: 40px;
@@ -45,7 +51,7 @@
 }
 
 /* Estilo para los botones */
-.btn {
+.btn { /* Mantenido genérico */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,19 +74,19 @@
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
-.icon {
+.icon { /* Mantenido genérico */
   font-weight: bold;
   font-size: 3.5rem;
 }
 
 /* Contenedor del botón volver */
-.volver-container {
+.volver-container { /* Mantenido genérico */
   margin-top: 60px;
   text-align: right;
   padding-right: 10px;
 }
 
-.volver {
+.volver { /* Mantenido genérico */
   background-color: #7c3aed;
   padding: 15px 25px;
   font-weight: 700;
@@ -94,6 +100,9 @@
   box-shadow: 0 8px 15px rgba(124, 58, 237, 0.8);
 }
 
+/* ========================================= */
+/* MEDIA QUERIES (Adaptados para Pedidos) */
+/* ========================================= */
 /* Media Query para pantallas grandes (entre 1301px y 1600px) */
 @media screen and (max-width: 1600px) and (min-width: 1301px) {
   .menu-pedido-wrapper {
@@ -227,4 +236,288 @@
     padding: 10px 16px !important;
     font-size: 0.8rem !important;
   }
+}
+
+/* ========================================= */
+/* Pedidos  */
+/* Estilos para el contenedor principal del formulario de Pedidos */
+.form-container {
+    /* Reutiliza el estilo del contenedor general de formulario (similar a .formulario-container o .consulta-container) */
+    font-size: 20px;
+    width: 100%;
+    max-width: 1000px; /* Establece un ancho máximo razonable para formularios */
+    margin: 20px auto; /* Centra el formulario */
+    background: white;
+    padding: 2rem;
+    color: #080808;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    color: #1d1d1d;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centra el título principal */
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre los grupos de formulario y secciones */
+}
+
+/* Estilos para los grupos de campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1b1b1b;
+    font-size: 1rem;
+}
+
+/* Estilos para los campos de entrada */
+.form-container input[type="number"],
+.form-container input[type="date"] {
+    /* Reutiliza el estilo de los inputs generales */
+    font-size: 1rem;
+    background-color: #f3f4f6;
+    border: 1px solid #bebebe;
+    color: #1b1b1b;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%; /* Asegura que ocupen el 100% del form-group */
+    box-sizing: border-box;
+}
+
+/* Estilos para la sección de Detalles del Pedido */
+.form-container h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #663dd4; /* Un color distintivo para la subsección */
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 0.5rem;
+}
+
+.detalle-item {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 5px solid #663dd4;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Estilos para los botones */
+.form-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    margin-top: 5px; /* Pequeño margen superior para separar de los inputs */
+}
+
+/* Botón Primario: Registrar Pedido */
+.btn-primary {
+    background-color: #663dd4; /* Color principal que usas en th de tabla */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #522aab;
+}
+
+/* Botón Secundario: Agregar Detalle / Cancelar */
+.btn-secondary {
+    background-color: #f3f4f6; /* Fondo claro */
+    color: #1b1b1b; /* Texto oscuro */
+    border: 1px solid #bebebe;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+/* consultar pedidos */
+.consulta-container {
+    /* Reutiliza el estilo del contenedor general */
+    background: white;
+    padding: 2rem;
+    color: #080808;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1600px; /* Ancho máximo amplio */
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+
+.consulta-container h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #1d1d1d;
+}
+
+/* =======================================
+   FORMULARIO DE FILTROS (.filter-form)
+   ======================================= */
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos salten de línea si no caben */
+    gap: 20px;
+    align-items: flex-end; /* Alinea los inputs y el botón al final */
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Fondo suave para la sección de filtros */
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.filter-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+    gap: 5px;
+}
+
+.filter-form input,
+.filter-form select {
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #bebebe;
+    color: #1b1b1b;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 200px; /* Ancho fijo para inputs de filtro */
+}
+
+.filter-form button {
+    /* Reutilizamos .btn-primary */
+    background-color: #663dd4; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    height: 42px; /* Alineación vertical con los inputs */
+}
+
+.filter-form button:hover {
+    background-color: #522aab;
+}
+
+/* =======================================
+   LISTADO DE PEDIDOS (.pedido-list)
+   ======================================= */
+
+.pedido-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Diseño de tarjetas adaptable */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pedido-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid #663dd4; /* Resaltar con el color de marca */
+}
+
+.pedido-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #663dd4;
+    font-size: 1.25rem;
+}
+
+.pedido-item p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.vencido-tag {
+    background-color: #ff4d4f; /* Rojo para vencido */
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+/* =======================================
+   PAGINACIÓN Y BOTÓN VOLVER
+   ======================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.pagination button {
+    background-color: #663dd4;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #9b7de0; /* Tono más claro del color principal cuando está deshabilitado */
+}
+
+.btn-volver {
+    /* Botón de volver al final */
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background-color: #bebebe;
+    color: #1b1b1b;
+    border: 1px solid #bebebe;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.btn-volver:hover {
+    background-color: #a0a0a0;
 }
