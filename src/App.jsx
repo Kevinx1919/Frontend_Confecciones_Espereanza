@@ -24,6 +24,13 @@ import EditarMaterial from "./compomentes/Stock/EditarMaterial";
 import EliminarMaterial from "./compomentes/Stock/EliminarMaterial";
 //importaciones para pedidps
 import MenuPedido from "./compomentes/Pedidos/MenuPedido";
+import RegistrarPedido from "./compomentes/Pedidos/RegistrarPedido";
+import DetallePedido from "./compomentes/Pedidos/DetallePedido";
+import ConsultarPedidos from "./compomentes/Pedidos/ConsultarPedido";
+
+
+//import ConsultarPedidoMock from "./compomentes/Pedidos/ConsultarPedidoMock";
+//import DetallePedidoMock from "./compomentes/Pedidos/DetallePedidoMock";
 //importaciones para tareas
 import MenuTarea from "./compomentes/Tareas/MenuTarea";
 //importaciones para reposrtes
@@ -83,7 +90,12 @@ const MainApp = () => {
         
         {/* Rutas para pedidos */}
         <Route path="/pedidos" element={<MenuPedido />} />
+        <Route path="/pedidos/registrar" element={<RegistrarPedido />} />
+        <Route path="/pedidos/detalle/:id" element={<DetallePedido />} />
+        <Route path="/pedidos/consultar" element={<ConsultarPedidos />} />
         
+
+
         {/* Rutas para tareas */}
         <Route path="/tareas" element={<MenuTarea />} />
         
